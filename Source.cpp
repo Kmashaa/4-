@@ -5,27 +5,20 @@
 using namespace std;
 int main()
 {
-	int irr[50];
-	int k;
-	float sum,c;
+	int irr[50][50];
+	int n,m;
+	float sum, c;
 	sum = 0;
-	cout << "Enter k = ";
-	cin >> k;
-	for (int i = 0; i < k; i++) 
-		{
-		cout  <<"irr[" << i + 1 << "] = ";
-		cin >> irr[i];
-		sum += irr[i];
-
+	cout << "Enter n = ";
+	cin >> n;
+	cout << "Enter m = ";
+	cin >> m;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			cout << "irr[" << i+1 << "] [" << j+1 << "] =";
+			cin>>irr[i][j];
+			if ((i+1)%2 == 0) { sum += irr[i][j]; }
 		}
-	c = sum / (k);
-	cout << sum<<endl;
-	cout << c << endl;;
-	int s=0;
-	for (int n = 0; n < k; n++)
-	{
-		if (irr[n] > c) { s++; }
-
+		cout << sum;
 	}
-	cout << s;
-	}
+}
